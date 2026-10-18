@@ -1,0 +1,12 @@
+{
+  "schema": "cinematic-mv.timeline/2",
+  "fps": 24,
+  "total_frames": 120,
+  "shots": [
+    {"id": "S01", "start_frame": 0, "end_frame": 60, "start": 0.0, "end": 2.5,
+     "section": "intro", "lyric_refs": [], "shot_size": "WS", "composition": "",
+     "environment": "", "action": "", "expression": "", "camera": "",
+     "transition_in": "cut", "transition_out": "cut", "emotion": "", "function": "",
+     "implementation": "", "complexity": 2}
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "thesis": "One arguable sentence.",
+  "anti_thesis": "The failure mode this film must avoid.",
+  "emotional_curve": [{"t": 0, "state": "numb", "energy": 0.1}],
+  "visual_chapters": [{"id": "I", "name": "", "start": 0, "end": 30, "world": "", "palette": [], "space": "", "camera": "", "grammar": ""}],
+  "contrast_map": [{"from": "S01", "to": "S02", "contrast": ""}],
+  "motifs": [{"id": "hands", "meaning": "", "payoff": ""}],
+  "cast": [{"id": "lead", "want": "", "need": "", "arc": ""}],
+  "shot_roles": [{"shot": "S01", "role": "", "incoming": "", "outgoing": "", "contrast": ""}],
+  "sound_visual_map": [{"music": "", "visual": ""}]
+}

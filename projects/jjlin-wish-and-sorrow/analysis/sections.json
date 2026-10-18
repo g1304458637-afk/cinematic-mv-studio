@@ -1,0 +1,13 @@
+[
+ {"id":"intro","label":"Dust / the last green","start":0.0,"end":12.72,"chapter":1,"role":"establish world, scale, the tiny green light"},
+ {"id":"verse1","label":"Solitude / counting days","start":12.72,"end":39.16,"chapter":1,"role":"introduce the gardener, her routine, her waiting"},
+ {"id":"pre1","label":"A star falls","start":39.16,"end":61.45,"chapter":1,"role":"the ark passes, a pod detaches, hope and fear"},
+ {"id":"chorus1","label":"Recognition","start":61.45,"end":74.0,"chapter":2,"role":"the intruder is the boy she lost; she hides him"},
+ {"id":"interlude","label":"Shelter","start":74.0,"end":86.06,"chapter":2,"role":"tending wounds, the two cranes, uneasy peace"},
+ {"id":"verse2","label":"The visitor's hunger","start":86.06,"end":112.52,"chapter":2,"role":"his mission vs her last seed; two losses collide"},
+ {"id":"pre2","label":"Shared warmth","start":112.52,"end":134.7,"chapter":2,"role":"storm repair, touch, the seed opens for both of them"},
+ {"id":"chorus2","label":"The seed wakes","start":134.7,"end":146.1,"chapter":2,"role":"growth, joy, then the countdown returns"},
+ {"id":"bridge","label":"The choice / departure","start":146.1,"end":159.33,"chapter":3,"role":"he takes the pod and leaves; she does not stop him"},
+ {"id":"final_chorus","label":"Storm / reunion / rebirth","start":159.33,"end":198.5,"chapter":3,"role":"betrayal reversed, dome breaks, rain and tree; the film's climax"},
+ {"id":"outro","label":"Rain / after","start":198.5,"end":232.595,"chapter":4,"role":"resolution, time passing, the world healed; final title"}
+]

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>cast gallery</title></head>
+<body style="margin:0;background:#1a1816">
+<canvas id="c" width="1080" height="1920"></canvas>
+<script src="src/engine.js"></script>
+<script src="src/cast.js"></script>
+<script>
+const canvas = document.getElementById('c');
+const ctx = canvas.getContext('2d', { alpha: false });
+function gallery() {
+  const g = ctx.createLinearGradient(0, 0, 0, H);
+  g.addColorStop(0, '#c8b8a4');
+  g.addColorStop(1, '#8d7d6c');
+  ctx.fillStyle = g;
+  ctx.fillRect(0, 0, W, H);
+  const bodies = [
+    { who: 'mu', pose: 'stand', face: 'calm', x: 270, y: 780, h: 620 },
+    { who: 'chen', pose: 'stand', face: 'resolve', x: 800, y: 780, h: 640, flip: -1 },
+    { who: 'mu', walk: 0.2, face: 'soft', x: 270, y: 1560, h: 620 },
+    { who: 'chen', pose: 'reach', face: 'wonder', x: 800, y: 1560, h: 640 }
+  ];
+  bodies.forEach(p => drawHuman(ctx, Object.assign({ t: 1.2, flip: 1 }, p)));
+  ctx.fillStyle = 'rgba(40,32,28,0.9)';
+  ctx.fillRect(0, 1620, W, 300);
+  function bust(x, who, face) {
+    ctx.save();
+    ctx.beginPath();
+    ctx.rect(x - 180, 1630, 360, 280);
+    ctx.clip();
+    drawHuman(ctx, { who, pose: 'stand', face, x, y: 2100, h: 860, t: 0.4, blink: false });
+    ctx.restore();
+  }
+  bust(270, 'mu', 'sad');
+  bust(800, 'chen', 'joy');
+  grain(ctx, 0.1);
+}
+window.DUR = 1;
+window.ready = true;
+window.renderAt = function (t, type, q) {
+  try { gallery(); }
+  catch (e) {
+    ctx.fillStyle = '#200';
+    ctx.fillRect(0, 0, W, H);
+    ctx.fillStyle = '#fff';
+    ctx.font = '28px sans-serif';
+    const lines = (e.stack || String(e)).split('\n').slice(0, 12);
+    lines.forEach((ln, i) => ctx.fillText(ln.slice(0, 70), 30, 80 + i * 36));
+  }
+  return canvas.toDataURL(type || 'image/jpeg', q || 0.9);
+};
+</script>
+</body>
+</html>

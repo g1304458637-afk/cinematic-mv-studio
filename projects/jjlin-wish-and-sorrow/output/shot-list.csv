@@ -1,0 +1,46 @@
+id,start_s,end_s,duration_s,start_frame,end_frame,section,lyric,shot_size,function,complexity
+S01,0.00,6.42,6.42,0,154,intro,,EWS,establish scale and the single living point,3
+S02,6.42,10.08,3.67,154,242,intro,,WS,introduce the ark and the falling visitor,3
+S03,10.08,12.71,2.62,242,305,intro,,ECU,macro image that makes dust potential life; introduces Mu's hand,4
+S04,12.71,17.58,4.88,305,422,verse1,[lyrics omitted],MS,"introduce Mu, the seedling and the ritual",4
+S05,17.58,22.21,4.62,422,533,verse1,[lyrics omitted],CU,reveal the cost of her waiting without exposition,3
+S06,22.21,27.04,4.83,533,649,verse1,[lyrics omitted] / [lyrics omitted],MCU,plant the photo/crane mystery,4
+S07,27.04,32.92,5.88,649,790,verse1,[lyrics omitted],WS,the ark is both hope and threat,4
+S08,32.92,39.17,6.25,790,940,verse1,[lyrics omitted],MCU,make the wish concrete before it is interrupted,4
+S09,39.17,45.67,6.50,940,1096,pre1,[lyrics omitted],WS,launch the inciting event,4
+S10,45.67,52.42,6.75,1096,1258,pre1,[lyrics omitted],MS,the 'wave/hold/let go' hand motif begins,4
+S11,52.42,57.04,4.62,1258,1369,pre1,[lyrics omitted],WS,raise the stakes physically,4
+S12,57.04,61.46,4.42,1369,1475,pre1,[lyrics omitted],MCU,end act I on a decision,4
+S13,61.46,64.88,3.42,1475,1557,chorus1,[lyrics omitted],MS,chorus 1 begins with physical action,5
+S14,64.88,68.00,3.12,1557,1632,chorus1,[lyrics omitted],CU,the recognition beat; no dialogue,5
+S15,68.00,74.00,6.00,1632,1776,chorus1,[lyrics omitted],overhead,"chorus 1 resolves into shelter, not romance",5
+S16,74.00,80.00,6.00,1776,1920,interlude,,insert montage,"interlude: quiet labor, plant the countdown",3
+S17,80.00,86.04,6.04,1920,2065,interlude,,WS,breathe; show the fragility of the refuge,4
+S18,86.04,92.54,6.50,2065,2221,verse2,[lyrics omitted],MCU,verse 2 begins with temptation,4
+S19,92.54,99.96,7.42,2221,2399,verse2,[lyrics omitted],two-shot,the argument that defines the middle,5
+S20,99.96,106.88,6.92,2399,2565,verse2,[lyrics omitted],insert / CU,"make the conflict structural, not moral",4
+S21,106.88,112.50,5.62,2565,2700,verse2,[lyrics omitted],WS,quiet before the storm; show care without words,3
+S22,112.50,119.21,6.71,2700,2861,pre2,[lyrics omitted],WS,music lift becomes physical effort,5
+S23,119.21,125.75,6.54,2861,3018,pre2,[lyrics omitted],MS,physical intimacy earned through action,5
+S24,125.75,130.12,4.38,3018,3123,pre2,[lyrics omitted],ECU,the midpoint miracle; visual rule established,5
+S25,130.12,134.71,4.58,3123,3233,pre2,[lyrics omitted],two-shot CU,emotional high before the bridge,4
+S26,134.71,138.25,3.54,3233,3318,chorus2,[lyrics omitted],WS,the seed answers their care,5
+S27,138.25,141.33,3.08,3318,3392,chorus2,[lyrics omitted],MCU,intimate beat inside the spectacle,4
+S28,141.33,146.08,4.75,3392,3506,chorus2,[lyrics omitted],CU,turn the joy into dread without dialogue,4
+S29,146.08,152.54,6.46,3506,3661,bridge,[lyrics omitted],WS,"the bridge is the choice, not a fight",4
+S30,152.54,159.33,6.79,3661,3824,bridge,[lyrics omitted],WS,the lyric 'I won't go' becomes a visual irony,5
+S31,159.33,163.38,4.04,3824,3921,final_chorus,[lyrics omitted],WS,largest emotional drop at the chorus start,4
+S32,163.38,168.00,4.62,3921,4032,final_chorus,[lyrics omitted],MCU,the twist: the seed was never his to take,5
+S33,168.00,171.50,3.50,4032,4116,final_chorus,[lyrics omitted],WS,the storm as antagonist; Mu's choice to protect,5
+S34,171.50,174.54,3.04,4116,4189,final_chorus,[lyrics omitted],WS,the return begins,5
+S35,174.54,179.54,5.00,4189,4309,final_chorus,[lyrics omitted],MS,the embrace is the emotional center,5
+S36,179.54,183.67,4.12,4309,4408,final_chorus,[lyrics omitted],ECU,the rule planted in S24 pays off,5
+S37,183.67,187.79,4.12,4408,4507,final_chorus,[lyrics omitted],WS,the film's iconic image,5
+S38,187.79,191.29,3.50,4507,4591,final_chorus,[lyrics omitted],EWS,show the scale of healing without losing the couple,5
+S39,191.29,194.54,3.25,4591,4669,final_chorus,[lyrics omitted],MS,quiet inside the spectacle,4
+S40,194.54,198.50,3.96,4669,4764,final_chorus,[lyrics omitted],ECU,deliver the lyric's image without text,4
+S41,198.50,204.50,6.00,4764,4908,outro,,EWS,show what their choice changed,4
+S42,204.50,211.00,6.50,4908,5064,outro,,MS,"reunion with the ark, not just the girl",4
+S43,211.00,218.00,7.00,5064,5232,outro,,WS time-lapse,the coda earns the ending,5
+S44,218.00,226.58,8.58,5232,5438,outro,,MS,the 'ever after' is ordinary and mortal,4
+S45,226.58,232.62,6.04,5438,5583,outro,,ECU → EWS,close the circle: dust → seed → leaf → water,5

@@ -1,0 +1,35 @@
+<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0;background:#111}canvas{display:none}</style>
+<script src="../node_modules/p5/lib/p5.min.js"></script>
+<script src="../node_modules/p5.brush/dist/p5.brush.js"></script>
+</head><body>
+<canvas id="out" width="1080" height="1920"></canvas>
+<script>
+const W=1080,H=1920; let p5inst, out=document.getElementById('out'), ctx=out.getContext('2d');
+function defineBrushes(){
+  brush.add('ink',{type:'default',weight:5,scatter:.25,sharpness:.8,grain:40,opacity:235,spacing:.2,pressure:[1.15,.75],rotate:'natural',noise:.15});
+  brush.add('soft',{type:'default',weight:14,scatter:1.5,sharpness:.35,grain:16,opacity:120,spacing:.4,pressure:[1,.6],rotate:'natural',noise:.3});
+}
+new p5((p)=>{
+  p5inst=p;
+  p.setup=()=>{p.createCanvas(W,H,p.WEBGL); p.pixelDensity(1); p.noLoop(); brush.scaleBrushes(4); defineBrushes(); window.ready=true;};
+  p.draw=()=>{
+    p.clear(); p.background(22,28,34);
+    // sky wash
+    brush.noStroke(); brush.fill('#1d3540',220); brush.fillBleed(.25); brush.fillTexture(.5,.35);
+    brush.polygon([[-W/2,-H/2],[W/2,-H/2],[W/2,H/2],[-W/2,H/2]]);
+    brush.noFill();
+    // 36 ink strokes
+    for(let i=0;i<36;i++){ const x=-W/2+ (i*97)%W, y=-H/2+((i*173)%H); brush.set('ink','#0d1418',2+i%5); brush.line(x,y,x+120*Math.sin(i),y+180*Math.cos(i*1.3)); }
+    // 8 watercolor blobs
+    for(let i=0;i<8;i++){ const x=-W/2+120+i*110, y=-H/2+200+i*170; brush.set('soft','#b86b3d',10); brush.fill('#b86b3d',80); brush.fillBleed(.4); brush.fillTexture(.6,.4); brush.circle(x,y,90+i*6); brush.noFill(); }
+    ctx.drawImage(p5inst.canvas,0,0);
+  };
+}, document.body);
+window.renderAt=(t)=>{ p5inst.redraw(); return out.toDataURL('image/jpeg',0.95); };
+window.renderCanvas2D=(t)=>{
+  const c=ctx; c.save(); c.fillStyle='#1d3540'; c.fillRect(0,0,W,H);
+  for(let i=0;i<3000;i++){const x=(i*197)%W,y=(i*331)%H; c.strokeStyle=`rgba(${20+i%60},${40+i%40},${50+i%30},0.12)`; c.lineWidth=1+(i%3); c.beginPath(); c.moveTo(x,y); c.lineTo(x+40*Math.sin(i),y+60*Math.cos(i*1.7)); c.stroke();}
+  c.restore(); return out.toDataURL('image/jpeg',0.95);
+};
+window.gpuInfo=()=>{const gl=p5inst.drawingContext,e=gl.getExtension('WEBGL_debug_renderer_info');return e?gl.getParameter(e.UNMASKED_RENDERER_WEBGL):'n/a';};
+</script></body></html>

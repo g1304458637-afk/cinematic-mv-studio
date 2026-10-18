@@ -1,0 +1,19 @@
+<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0}canvas{display:block}</style></head><body>
+<canvas id="out" width="1080" height="1920"></canvas>
+<script src="src/lib/core_v25.js"></script>
+<script src="src/lib/character_v25.js"></script>
+<script>
+const cv=document.getElementById('out'), ctx=cv.getContext('2d');
+buildTextures(); initPatterns(ctx);
+console.log('VERSION24');
+function draw(t=0){
+  ctx.clearRect(0,0,W,H); ctx.fillStyle='#ddd2bd'; ctx.fillRect(0,0,W,H);
+  window.__NO_EDGE__=true;
+  ctx.save(); ctx.translate(300,1500); ctx.scale(850,850);
+  const p=capsulePath(-.068,-.485,-.062,0,.044,.035,12);
+  paintShape(ctx,p,{color:'#494237',gy0:0,gy1:-.5,texA:.16,ink:'#2a1e19',inkW:.0045,seed:5});
+  ctx.restore();
+  return cv.toDataURL('image/jpeg',.95);
+}
+window.renderAt=(t)=>draw(t); window.ready=true;
+</script></body></html>

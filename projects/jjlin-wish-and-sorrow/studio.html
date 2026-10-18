@@ -1,0 +1,38 @@
+<!doctype html><html><head><meta charset="utf-8"><title>愿与愁 · The Last Orchard</title>
+<style>html,body{margin:0;background:#0b0b0a;overflow:hidden}canvas{display:block;width:100vw;height:auto;max-height:100vh;object-fit:contain}</style></head>
+<body>
+<canvas id="out" width="1080" height="1920"></canvas>
+<script src="src/lib/core.js?v=53"></script>
+<script src="src/lib/character.js?v=53"></script>
+<script src="src/lib/sets.js?v=53"></script>
+<script src="src/lib/props.js?v=53"></script>
+<script src="src/custom_shots.js?v=53"></script>
+<script src="src/shots.js?v=53"></script>
+<script>
+const OUT=document.getElementById('out'), CTX=OUT.getContext('2d');
+const FPS=24;
+buildTextures(); initPatterns(CTX);
+function shotAt(t){
+  let s=SHOT_SPECS[0];
+  for(const q of SHOT_SPECS){ if(t>=q.a && t<q.b) return q; if(t>=q.b) s=q; }
+  return s;
+}
+function renderAt(t){
+  const s=shotAt(t), f=Math.round(t*FPS);
+  CTX.save(); CTX.clearRect(0,0,W,H);
+  drawSpec(CTX,s,t,f);
+  CTX.restore();
+  return OUT.toDataURL('image/jpeg',0.94);
+}
+window.renderAt=renderAt;
+window.currentShotId=(t)=>shotAt(t).id;
+window.TOTAL_FRAMES=Math.ceil(232.595*FPS);
+window.ready=true;
+// preview scrubber when opened manually
+if(!location.search.includes('render')){
+  const q=new URLSearchParams(location.search); const t=parseFloat(q.get('t')||'0');
+  renderAt(t);
+  window.addEventListener('keydown',e=>{ if(e.key==='ArrowRight') renderAt(Math.min(232,parseFloat(q.get('t')||'0')+.5)); });
+}
+</script>
+</body></html>

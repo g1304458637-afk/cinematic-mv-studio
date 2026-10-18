@@ -1,0 +1,15 @@
+<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0}canvas{display:block}</style></head><body>
+<canvas id="out" width="1080" height="1920"></canvas>
+<script src="src/lib/core_v29.js"></script>
+<script src="src/lib/character_v29.js"></script>
+<script>
+const cv=document.getElementById('out'), ctx=cv.getContext('2d');
+buildTextures(); initPatterns(ctx);
+window.__NO_EDGE__=true; window.__NO_INK__=true; window.__SIMPLE_INK__=true;
+function draw(t=0){
+  ctx.clearRect(0,0,W,H); ctx.fillStyle='#ddd2bd'; ctx.fillRect(0,0,W,H);
+  drawPerson(ctx,t,{who:'mu',x:360,y:1500,h:850,turn:.25,expression:'soft',pose:{lean:.03,handL:[-.18,-.47],handR:[.17,-.45]},seed:7});
+  return cv.toDataURL('image/jpeg',.95);
+}
+window.renderAt=(t)=>draw(t); window.ready=true;
+</script></body></html>

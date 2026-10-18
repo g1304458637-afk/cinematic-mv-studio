@@ -1,0 +1,11 @@
+{
+  "title": "Untitled",
+  "duration": 232.595,
+  "fps": 24,
+  "width": 1080,
+  "height": 1920,
+  "audio": "assets/song.m4a",
+  "studio": "studio.html",
+  "fps_animation": 12,
+  "output": "output/final.mp4"
+}

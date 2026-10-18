@@ -1,0 +1,31 @@
+<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0}canvas{display:block}</style></head><body>
+<canvas id="out" width="1080" height="1920"></canvas>
+<script src="src/lib/core_v47.js"></script>
+<script src="src/lib/character_v47.js"></script>
+<script src="src/lib/sets_v47.js"></script>
+<script src="src/lib/props_v47.js"></script>
+<script>
+const cv=document.getElementById('out'), ctx=cv.getContext('2d');
+buildTextures(); initPatterns(ctx);
+function draw(t=0){
+  ctx.clearRect(0,0,W,H);
+  const cam={x:540,y:1050,zoom:1.02,rot:0,shake:0,seed:1,frame:0};
+  setValley(ctx,t,cam,{stage:1,storm:.75,rainOn:1,inkTree:true,treeH:660});
+  ctx.save(); applyCam(ctx,cam,1,false);
+  // god rays through the tree
+  ctx.save(); ctx.globalCompositeOperation='screen';
+  for(let i=0;i<7;i++){ const g=ctx.createLinearGradient(540,300,540+ (i-3)*160,1600); g.addColorStop(0,'rgba(220,235,200,.05)'); g.addColorStop(1,'rgba(220,235,200,0)'); ctx.fillStyle=g; ctx.beginPath(); ctx.moveTo(500+i*8,300); ctx.lineTo(580+i*8,300); ctx.lineTo(700+ (i-3)*180,1600); ctx.lineTo(360+(i-3)*180,1600); ctx.closePath(); ctx.fill(); }
+  ctx.restore();
+  // seed between them
+  glow(ctx,540,1470,120,'#c9e89a',.5);
+  seedPod(ctx,540,1500,.7,{open:.5,glowOn:true,t});
+  drawSilhouette(ctx,t,{who:'mu',x:455,y:1620,h:380,turn:.4,dark:'#0d0c0a',rim:'#f2cf92',rimAlpha:.6,pose:{lean:.12,handL:[-.1,-.28],handR:[.14,-.30]},wind:.4,seed:3});
+  drawSilhouette(ctx,t,{who:'chen',x:625,y:1625,h:400,turn:-.4,dark:'#0b0e0f',rim:'#c9dcea',rimAlpha:.55,pose:{lean:-.1,handL:[-.14,-.30],handR:[.1,-.28]},wind:.4,seed:5});
+  ctx.restore();
+  // fog bands
+  for(let i=0;i<4;i++){ const y=1200+i*180; const g=ctx.createLinearGradient(0,y,0,y+180); g.addColorStop(0,'rgba(180,195,185,0)'); g.addColorStop(.5,'rgba(180,195,185,.08)'); g.addColorStop(1,'rgba(180,195,185,0)'); ctx.fillStyle=g; ctx.fillRect(0,y,W,180); }
+  paperOverlay(ctx,t,.18); vignette(ctx,.6); filmGrain(ctx,0,.04);
+  return cv.toDataURL('image/jpeg',.95);
+}
+window.renderAt=(t)=>draw(t); window.ready=true;
+</script></body></html>

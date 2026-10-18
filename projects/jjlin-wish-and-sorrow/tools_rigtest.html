@@ -1,0 +1,21 @@
+<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0;background:#222}canvas{display:block}</style></head><body>
+<canvas id="out" width="1080" height="1920"></canvas>
+<script src="src/lib/core_v25.js"></script>
+<script src="src/lib/character_v25.js"></script>
+<script>
+const cv=document.getElementById('out'), ctx=cv.getContext('2d');
+buildTextures(); initPatterns(ctx);
+function draw(t=0){
+  ctx.clearRect(0,0,W,H);
+  const g=ctx.createLinearGradient(0,0,0,H); g.addColorStop(0,'#cfd8cf'); g.addColorStop(.6,'#e8dcc6'); g.addColorStop(1,'#b9a98e');
+  ctx.fillStyle=g; ctx.fillRect(0,0,W,H);
+  // ground
+  ctx.fillStyle='#a89980'; ctx.fillRect(0,1480,W,440);
+  drawPerson(ctx,t,{who:'mu',x:360,y:1500,h:850,turn:.25,expression:'soft',pose:{lean:.03,handL:[-.18,-.47],handR:[.17,-.45]},seed:7,light:{x:-.5,y:-.8,color:'#ffe0b0',rim:.55}});
+  drawPerson(ctx,t,{who:'chen',x:730,y:1510,h:900,turn:-.2,expression:'neutral',pose:{lean:-.02,handL:[-.16,-.46],handR:[.15,-.48]},seed:11,light:{x:.6,y:-.7,color:'#a9c8ff',rim:.5}});
+  paperOverlay(ctx,t,.16); vignette(ctx,.5); filmGrain(ctx,0,.04);
+  return cv.toDataURL('image/jpeg',.95);
+}
+window.renderAt=(t)=>draw(t);
+window.ready=true;
+</script></body></html>

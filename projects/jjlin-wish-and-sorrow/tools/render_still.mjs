@@ -1,0 +1,13 @@
+import puppeteer from 'puppeteer-core'; import path from 'node:path'; import fs from 'node:fs';
+const browser=await puppeteer.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true,args:['--no-sandbox','--ignore-gpu-blocklist','--enable-gpu-rasterization','--use-gl=angle','--allow-file-access-from-files'],protocolTimeout:0});
+const page=await browser.newPage(); await page.setViewport({width:1080,height:1920,deviceScaleFactor:1});
+page.on('console',m=>console.log('PAGE:',m.text())); page.on('pageerror',e=>console.log('ERR:',e.message));
+const file=process.argv[2], out=process.argv[3]||'projects/jjlin-wish-and-sorrow/tools/still.jpg', t=parseFloat(process.argv[4]||'0');
+await page.setCacheEnabled(false);
+const u='file://'+path.resolve(file)+(file.includes('?')?'&':'?')+'v='+Date.now();
+console.log('URL',u);
+await page.goto(u,{waitUntil:'load'});
+await page.waitForFunction('window.ready===true',{timeout:60000});
+const d=await page.evaluate(`window.renderAt(${t})`);
+fs.writeFileSync(out,Buffer.from(d.split(',')[1],'base64'));
+await browser.close(); console.log('wrote',out);

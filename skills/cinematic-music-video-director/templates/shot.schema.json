@@ -1,0 +1,19 @@
+{
+  "shot": {
+    "id": "S01",
+    "start": 0,
+    "end": 6.4,
+    "section": "intro",
+    "lyric_or_music": "instrumental, low energy",
+    "size": "wide",
+    "place": "ash cliff, glass orchard",
+    "action": "camera pushes toward a single warm window",
+    "face": "none (too small)",
+    "camera": "push in 8%",
+    "in": "fade from paper",
+    "out": "cut",
+    "job": "establish loneliness before any person is readable",
+    "how": "setAsh + slow camera keys",
+    "cost": "low"
+  }
+}

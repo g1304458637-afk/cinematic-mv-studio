@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>studio</title>
+<style>
+  html, body { margin: 0; padding: 0; background: #0a0908; overflow: hidden; }
+  canvas { display: block; width: 1080px; height: 1920px; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<script src="../lib/core.js"></script>
+<script src="../lib/character.js"></script>
+<script src="timeline_data.js"></script>
+<script src="fx.js"></script>
+<script src="sets.js"></script>
+<script src="blocks.js"></script>
+<script>
+  buildTextures();
+  const ctx0 = document.getElementById('c').getContext('2d');
+  initPatterns(ctx0);
+  window.warm = () => { renderFrame(document.getElementById('c'), 1.0); };
+  window.ready = true;
+</script>
+<script src="main.js"></script>
+</body>
+</html>

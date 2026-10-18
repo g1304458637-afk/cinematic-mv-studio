@@ -1,0 +1,109 @@
+{
+  "schema": "cinematic-mv.director-score/1",
+  "film": {
+    "title_zh": "最后的果园",
+    "title_en": "The Last Orchard",
+    "song": "愿与愁 (Dust and Ashes)",
+    "artist": "林俊杰",
+    "runtime": 232.595,
+    "aspect": "9:16",
+    "fps": 24,
+    "format": "lyric-free visual narrative; optional sidecar SRT"
+  },
+  "thesis": "Love is not the refusal of dust; it is the act of remembering, together, that turns dust into rain.",
+  "anti_thesis": "A beautiful apocalypse with no human decision at its center.",
+  "emotional_curve": [
+    {"t": 0.0, "state": "numb, vast, waiting", "energy": 0.10},
+    {"t": 12.72, "state": "routine as a form of grief", "energy": 0.24},
+    {"t": 39.16, "state": "a fall from the sky reopens hope", "energy": 0.40},
+    {"t": 61.45, "state": "recognition, tenderness, fear", "energy": 0.52},
+    {"t": 86.06, "state": "intimacy under pressure", "energy": 0.44},
+    {"t": 112.52, "state": "shared work, first joy", "energy": 0.66},
+    {"t": 134.7, "state": "wonder: the seed answers them", "energy": 0.78},
+    {"t": 146.1, "state": "betrayal, silence, the choice", "energy": 0.34},
+    {"t": 159.33, "state": "loss and storm", "energy": 0.72},
+    {"t": 171.49, "state": "return, mutual rescue", "energy": 0.90},
+    {"t": 179.53, "state": "rebirth, rain, reunion", "energy": 1.00},
+    {"t": 198.5, "state": "release, ordinary happiness, time", "energy": 0.55},
+    {"t": 226.59, "state": "a quiet image that outlasts the song", "energy": 0.22}
+  ],
+  "visual_chapters": [
+    {"id": "I", "name": "The Tally", "start": 0.0, "end": 39.16,
+     "world": "ash valley, glass dome, one green point", "palette": ["bone", "ash", "umber", "dull teal", "lamp amber"],
+     "space": "wide, symmetrical, vertical dome ribs; tiny human", "camera": "locked / slow drift / long lens",
+     "grammar": "stillness, negative space, one moving thing per shot"},
+    {"id": "II", "name": "The Guest", "start": 39.16, "end": 134.7,
+     "world": "the same dome, now inhabited; storm and sprout", "palette": ["amber", "moss", "blood", "indigo storm"],
+     "space": "two-shots, over-the-shoulder, hands, breath on glass", "camera": "handheld, push-ins, rack focus",
+     "grammar": "proximity, interruption, touch; the frame gets fuller as the seed grows"},
+    {"id": "III", "name": "The Storm", "start": 134.7, "end": 198.5,
+     "world": "the dome breaks; the tree answers; ash becomes rain", "palette": ["indigo", "black", "jade", "gold", "rain-silver"],
+     "space": "wide verticals, shards, roots, bodies against weather", "camera": "whip, crane, handheld, one dolly-zoom",
+     "grammar": "weather as antagonist; shape rhymes (seed/eye/drop/tree); the frame opens"},
+    {"id": "IV", "name": "The Orchard", "start": 198.5, "end": 232.595,
+     "world": "a green valley, a grounded ark, ordinary life", "palette": ["pale green", "warm bone", "gold", "sky blue"],
+     "space": "wide, open, horizon; the tree as a vertical axis", "camera": "slow crane, static long takes, final close-up",
+     "grammar": "release; the camera stops pushing; the world keeps moving"}
+  ],
+  "contrast_map": [
+    {"from": "S01 wide dead world", "to": "S03 macro dust/seed", "contrast": "scale / one living thing"},
+    {"from": "S04 routine interior", "to": "S07 the ark's shadow", "contrast": "domestic / cosmic"},
+    {"from": "S13 wounded intruder", "to": "S15 tender shelter", "contrast": "threat / care"},
+    {"from": "S20 two losses", "to": "S24 hands on the pod", "contrast": "argument / touch"},
+    {"from": "S28 countdown in warm light", "to": "S29 empty doorway", "contrast": "full frame / absence"},
+    {"from": "S32 empty pod in space", "to": "S33 dome tears apart", "contrast": "silence / violence"},
+    {"from": "S35 embrace in storm", "to": "S37 tree through glass", "contrast": "closed bodies / open sky"},
+    {"from": "S43 time-lapse green", "to": "S45 one leaf in water", "contrast": "epic / intimate"}
+  ],
+  "motifs": [
+    {"id": "hands", "meaning": "wave, hold, let go, clasp", "payoff": "S40 ten fingers interlocked on the seed"},
+    {"id": "paper_crane", "meaning": "the childhood promise; memory before the ark", "payoff": "S39 two cranes tied to the tree"},
+    {"id": "glass", "meaning": "protection and separation; the dome, the mask, the vial", "payoff": "S37 glass becomes rain/light, not a wall"},
+    {"id": "ash_to_rain", "meaning": "the same particles, transformed by choice", "payoff": "S36–S38 ash turns silver in mid-air"},
+    {"id": "tally", "meaning": "time measured alone", "payoff": "S44 two sets of marks, then a child's? no: a new seed catalog"},
+    {"id": "seed", "meaning": "memory, inheritance, the wish", "payoff": "S45 a seed falls into water and the tree is in the reflection"}
+  ],
+  "cast": [
+    {"id": "mu", "name": "暮 / Mu", "role": "the gardener", "want": "for the boy to come back", "need": "to let the future be shared, not guarded", "arc": "guardian → host → co-creator"},
+    {"id": "chen", "name": "尘 / Chen", "role": "the sky scavenger", "want": "to save the ark with the seed", "need": "to remember where he came from", "arc": "thief → guest → partner"},
+    {"id": "seed", "name": "the seed", "role": "the last memory of the orchard", "want": "to open", "need": "two people, not one", "arc": "relic → sprout → tree → rain"}
+  ],
+  "shot_roles": [
+    {"shot": "S01", "role": "establish scale and the single green point", "hands_to_next": "the green light becomes the subject"},
+    {"shot": "S02", "role": "the ark and the falling pod", "hands_to_next": "the streak lands at the orchard"},
+    {"shot": "S03", "role": "macro: dust is also potential life", "hands_to_next": "the hand introduces Mu"},
+    {"shot": "S04", "role": "Mu's routine and loneliness", "hands_to_next": "the tally marks imply years"},
+    {"shot": "S06", "role": "the photograph and the crane plant the mystery", "hands_to_next": "the ark's shadow interrupts"},
+    {"shot": "S08", "role": "her wish is a physical object", "hands_to_next": "the wish is interrupted by the pod"},
+    {"shot": "S10", "role": "hope and fear on the cliff", "hands_to_next": "the crash"},
+    {"shot": "S12", "role": "she chooses to help, not hide", "hands_to_next": "chorus: recognition"},
+    {"shot": "S14", "role": "the boy is the boy", "hands_to_next": "she hides him"},
+    {"shot": "S19", "role": "the argument makes both wants legitimate", "hands_to_next": "they must cooperate to survive the storm"},
+    {"shot": "S24", "role": "the seed's rule is revealed: two people", "hands_to_next": "joy before the fall"},
+    {"shot": "S28", "role": "the countdown returns", "hands_to_next": "the choice"},
+    {"shot": "S31", "role": "the betrayal lands on the final chorus", "hands_to_next": "the empty pod"},
+    {"shot": "S33", "role": "consequence: the dome cannot hold", "hands_to_next": "he turns back"},
+    {"shot": "S36", "role": "the seed opens only when they choose each other", "hands_to_next": "the tree"},
+    {"shot": "S39", "role": "the lyric 'only for the moment of reunion'", "hands_to_next": "the coda"},
+    {"shot": "S45", "role": "the film's last image: a seed, water, a reflection", "hands_to_next": "end"}
+  ],
+  "sound_visual_map": [
+    {"music": "sparse intro / single piano", "visual": "one green point in a vast ash field; almost no motion"},
+    {"music": "verse 1 breath", "visual": "small domestic sounds: dropper, tally, glass"},
+    {"music": "pre 1 lift", "visual": "the ark passes; the pod detaches; wind rises"},
+    {"music": "chorus 1 release", "visual": "recognition; the frame warms; the boy is laid among plants"},
+    {"music": "interlude", "visual": "quiet tending; two cranes; the ark signal blinks"},
+    {"music": "verse 2 pulse", "visual": "the argument; hands and eyes; the seed between them"},
+    {"music": "pre 2 build", "visual": "storm repair; physical effort; the pod opens"},
+    {"music": "chorus 2 lift", "visual": "growth and joy; the tree answers; the countdown returns"},
+    {"music": "bridge hush", "visual": "the empty doorway; the launch; the wind"},
+    {"music": "final chorus peak", "visual": "storm, return, tree, rain, reunion — the film's largest images"},
+    {"music": "outro release", "visual": "time-lapse green; ordinary happiness; one leaf"}
+  ],
+  "recurring_visual_events": [
+    {"event": "paper crane appears", "shots": ["S06", "S16", "S39", "S44"]},
+    {"event": "hand close-up", "shots": ["S03", "S05", "S19", "S24", "S29", "S35", "S40"]},
+    {"event": "ash/rain particle field", "shots": ["S01", "S10", "S22", "S33", "S36", "S38", "S43"]},
+    {"event": "glass reflection", "shots": ["S06", "S14", "S28", "S33", "S45"]}
+  ]
+}

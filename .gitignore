@@ -1,0 +1,27 @@
+node_modules/
+.venv/
+.npmcache/
+.pipcache/
+.hf/
+research/
+**/renders/frames/
+**/renders/pilot/
+**/previews/
+**/*.m4a
+**/*.wav
+**/*.mp4
+**/*.jpg
+**/*.jpeg
+**/*.png
+.DS_Store
+__pycache__/
+*.pyc
+
+# copyrighted music and picture masters stay local
+**/*.lrc
+**/*.srt
+**/lyrics.json
+**/lyrics_*.json
+**/lyrics_raw.json
+**/whisper_*.json
+**/asr/

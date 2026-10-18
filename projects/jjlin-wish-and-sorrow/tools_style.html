@@ -1,0 +1,42 @@
+<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0}canvas{display:block}</style></head><body>
+<canvas id="out" width="1080" height="1920"></canvas>
+<script src="src/lib/core_v43.js"></script>
+<script src="src/lib/character_v43.js"></script>
+<script src="src/lib/sets_v43.js"></script>
+<script>
+const cv=document.getElementById('out'), ctx=cv.getContext('2d');
+buildTextures(); initPatterns(ctx);
+function dropper(ctx,x,y,a){
+  ctx.save(); ctx.translate(x,y); ctx.rotate(a);
+  ctx.fillStyle='rgba(210,230,220,.35)'; ctx.strokeStyle='#d9e6d8'; ctx.lineWidth=1.2;
+  ctx.beginPath(); ctx.roundRect(-4,-46,8,44,3); ctx.fill(); ctx.stroke();
+  ctx.fillStyle='#b9c9b5'; ctx.beginPath(); ctx.roundRect(-6,-58,12,16,4); ctx.fill();
+  ctx.fillStyle='#7f9b56'; ctx.beginPath(); ctx.arc(0,-30,3,0,TAU); ctx.fill();
+  ctx.restore();
+}
+function draw(t=0){
+  const cam={x:540,y:1120,zoom:1.05,rot:0,shake:0,seed:1,frame:0};
+  ctx.clearRect(0,0,W,H);
+  setOrchard(ctx,t,cam,{night:false,storm:.1,broken:0,tree:0,warm:1.1});
+  // character in world coords
+  ctx.save(); applyCam(ctx,cam,1,false);
+  drawPerson(ctx,t,{who:'mu',x:430,y:1540,h:760,turn:.3,expression:'soft',pose:{lean:.05,handL:[-.10,-.34],handR:[.14,-.30]},seed:7,light:{x:-.5,y:-.8,color:'#ffd9a0',rim:.6}});
+  dropper(ctx,430+.14*760,1540-.30*760,-.55);
+  // foreground pot + sprout
+  pot(ctx,760,1430,50,58,'#5a4632',1);
+  drawTree(ctx,760,1372,.0,{glow:true,seed:401});
+  // water drop
+  const dy=1152+((t*90)%150);
+  ctx.fillStyle='rgba(180,220,210,.55)'; ctx.beginPath(); ctx.ellipse(516,dy,3,6,0,0,TAU); ctx.fill();
+  // foreground framing leaves
+  ctx.globalAlpha=.5;
+  for(let i=0;i<3;i++) paintShape(ctx, ellipsePath(120+i*70,1780+i*30,90,26,-.4+i*.2),{color:'#2f3b2b',gy0:1750,gy1:1850,edgeW:6,ink:'#1c251b',inkW:2,seed:420+i});
+  ctx.restore();
+  // overlays
+  const warm=ctx.createRadialGradient(420,900,80,480,1100,900); warm.addColorStop(0,'rgba(255,214,150,.10)'); warm.addColorStop(1,'rgba(10,15,14,0)');
+  ctx.fillStyle=warm; ctx.fillRect(0,0,W,H);
+  paperOverlay(ctx,t,.16); vignette(ctx,.55); filmGrain(ctx,0,.035);
+  return cv.toDataURL('image/jpeg',.95);
+}
+window.renderAt=(t)=>draw(t); window.ready=true;
+</script></body></html>
